@@ -1,0 +1,270 @@
+/* Definición de variables CSS para colores, fuentes y relleno */
+:root {
+    --primary-color: #333; /* Color principal (gris oscuro) */
+    --secondary-color: #555; /* Color secundario (gris medio) */
+    --accent-color: #fff; /* Color de acento (blanco) */
+    --background-color: #f5f5f5; /* Color de fondo (gris claro) */
+    --font-family: 'Arial', sans-serif; /* Fuente principal */
+    --padding: 20px; /* Relleno estándar */
+}
+
+/* Estilo general del cuerpo del documento */
+body {
+    font-family: var(--font-family); /* Fuente desde la variable */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    background-color: var(--background-color); /* Fondo desde la variable */
+    color: var(--primary-color); /* Color del texto desde la variable */
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: var(--padding); /* Relleno desde la variable */
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: var(--primary-color); /* Fondo del encabezado */
+    color: var(--accent-color); /* Color del texto */
+    padding: var(--padding) 0; /* Relleno superior e inferior */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del encabezado */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Estilo del título dentro del encabezado */
+header h1 {
+    margin: 0; /* Elimina el margen */
+}
+
+/* Sección de productos y estilo de cada producto */
+#productos, .producto {
+    padding: var(--padding) 0; /* Relleno superior e inferior */
+    animation: slideIn 1s ease-in-out; /* Animación de deslizamiento */
+}
+
+/* Estilo individual de los productos */
+.producto {
+    display: flex; /* Flexbox para alineación */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    border-bottom: 1px solid #ccc; /* Borde inferior */
+    padding-bottom: var(--padding); /* Relleno inferior */
+    margin-bottom: var(--padding); /* Margen inferior */
+}
+
+/* Estilo de la imagen dentro de los productos */
+.producto img {
+    width: 100px; /* Ancho fijo */
+    height: 100px; /* Altura fija */
+    margin-right: var(--padding); /* Margen derecho */
+    object-fit: cover; /* Recortar la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de la imagen */
+}
+
+/* Estilo del título y párrafo dentro de los productos */
+.producto h3, .producto p {
+    margin: 0; /* Elimina el margen */
+}
+
+/* Margen superior del párrafo */
+.producto p {
+    margin-top: 5px; /* Margen superior */
+}
+
+/* Estilo del input tipo número */
+.producto input[type="number"] {
+    width: 50px; /* Ancho fijo */
+    margin-left: var(--padding); /* Margen izquierdo */
+    padding: 5px; /* Relleno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Estilo de los botones */
+button {
+    padding: 10px 20px; /* Relleno interno */
+    background-color: var(--primary-color); /* Fondo del botón */
+    color: var(--accent-color); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s, transform 0.3s; /* Transición de fondo y transformación */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del botón */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Estilo del botón en estado hover */
+button:hover {
+    background-color: var(--secondary-color); /* Cambio de fondo */
+    transform: translateY(-2px); /* Efecto de desplazamiento */
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: var(--primary-color); /* Fondo del pie de página */
+    color: var(--accent-color); /* Color del texto */
+    text-align: center; /* Texto centrado */
+    padding: var(--padding) 0; /* Relleno superior e inferior */
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Posición en la parte inferior */
+    width: 100%; /* Ancho completo */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra del pie de página */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Margen superior de la lista de productos */
+#lista-productos {
+    margin-top: var(--padding); /* Margen superior */
+}
+
+/* Margen izquierdo de los botones */
+button {
+    margin-left: 5px; /* Margen izquierdo */
+}
+
+/* Estilo del mensaje emergente */
+.mensaje {
+    position: fixed; /* Posición fija */
+    top: 50%; /* Posición en el centro vertical */
+    left: 50%; /* Posición en el centro horizontal */
+    transform: translate(-50%, -50%); /* Ajuste de posición al centro */
+    background-color: var(--accent-color); /* Fondo del mensaje */
+    padding: var(--padding); /* Relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra del mensaje */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones de opacidad y transformación */
+}
+
+/* Mostrar mensaje emergente */
+.mensaje.show {
+    opacity: 1; /* Hacer visible */
+    transform: translate(-50%, -50%) scale(1.1); /* Efecto de escalado */
+}
+
+/* Estilo del modal */
+.modal {
+    position: fixed; /* Posición fija */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Posición en la parte izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
+}
+
+/* Contenido del modal */
+.modal-contenido {
+    background-color: var(--accent-color); /* Fondo del contenido */
+    padding: var(--padding); /* Relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra del contenido */
+    text-align: center; /* Texto centrado */
+    animation: popIn 0.5s ease-in-out; /* Animación de entrada */
+}
+
+/* Estilo del párrafo dentro del contenido del modal */
+.modal-contenido p {
+    margin-bottom: var(--padding); /* Margen inferior */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        opacity: 1; /* Termina visible */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px); /* Comienza desplazado hacia abajo */
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        transform: translateY(0); /* Termina en su posición original */
+        opacity: 1; /* Termina visible */
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9); /* Comienza más pequeño */
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        transform: scale(1); /* Termina en su tamaño original */
+        opacity: 1; /* Termina visible */
+    }
+}
+
+/* Confirmación de compra */
+.confirmacion {
+    position: fixed; /* Posición fija */
+    top: 50%; /* Centro vertical */
+    left: 50%; /* Centro horizontal */
+    transform: translate(-50%, -50%); /* Ajuste de posición */
+    background-color: var(--accent-color); /* Fondo */
+    padding: var(--padding); /* Relleno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones */
+}
+
+/* Mostrar confirmación */
+.confirmacion.show {
+    opacity: 1; /* Hacer visible */
+    transform: translate(-50%, -50%) scale(1.1); /* Efecto de escalado */
+}
+
+/* Contenido de la confirmación */
+.confirmacion-contenido {
+    text-align: center; /* Texto centrado */
+}
+
+/* Botones dentro de la confirmación */
+.confirmacion-contenido button {
+    background-color: var(--primary-color); /* Fondo */
+    color: var(--accent-color); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Relleno */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición de fondo */
+}
+
+/* Estilo del botón en estado hover dentro de la confirmación */
+.confirmacion-contenido button:hover {
+    background-color: var(--secondary-color); /* Cambio de fondo */
+}
+
+/* Diseño responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Ancho completo */
+        padding: 10px; /* Relleno ajustado */
+    }
+
+    .producto {
+        flex-direction: column; /* Disposición en columna */
+        align-items: flex-start; /* Alinear al inicio */
+    }
+
+    .producto img {
+        margin-bottom: var(--padding); /* Margen inferior */
+    }
+
+    .producto input[type="number"] {
+        margin-left: 0; /* Sin margen izquierdo */
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="carritocompras.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Aled's & Sofi's Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="PaginaCompra.html">Productos</a></li>
+                    <li><a href="carritodecompras.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="carrito">
+        <div class="container">
+            <h2>Carrito de Compras</h2>
+            <div id="lista-productos" class="productos-container">
+                <div class="producto">
+                    <p>Producto 1</p>
+                </div>
+                <div class="producto">
+                    <p>Producto 2</p>
+                </div>
+                <div class="producto">
+                    <p>Producto 3</p>
+                </div>
+                <div class="producto">
+                    <p>Producto 4</p>
+                </div>
+            </div>
+            <p>Total de productos en el carrito: <span id="total-productos"></span></p>
+            <button onclick="confirmarCompra()">Comprar</button>
+        </div>
+    </section>
+    <div id="confirmacion" class="confirmacion"></div>
+    <script src="carritocompras.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link rel="stylesheet" href="PaginaCompra.css">
+    <style>
+        /* Estilos para la barra deslizante */
+        .slider {
+            width: 1000px;
+            height: 50px;
+            position: fixed;
+            bottom: 0;
+            right: -100%;
+            z-index: 9999;
+            transition: right 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #f5f5f5; /* Fondo claro por defecto */
+        }
+
+        /* Estilos para los botones en la barra deslizante */
+        .slider button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        /* Estilo para mostrar la barra */
+        .slider.activo {
+            right: 0;
+        }
+
+        /* Cambia el fondo cuando el tema es oscuro */
+        body.dark-theme .slider {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Aled's & Sofi's Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="PaginaCompra.html">Productos</a></li>
+                    <li><a href="carritodecompras.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Botón para mostrar/ocultar la barra -->
+    <button onclick="toggleSlider()">CONFIGURACIÓN</button>
+
+    <!-- Barra deslizante -->
+    <div class="slider" id="slider">
+        <button onclick="toggleTheme()">Cambiar Tema</button>
+        <button id="userInfoButton" onclick="redirectToUserInfo()">Ver mi Información</button>
+        <button id="loginButton" onclick="redirectToLogin()">Iniciar sesión</button>
+        <button id="logoutButton" style="display: none;" onclick="logout()">Cerrar sesión</button>
+    </div>
+
+    <section id="productos">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <section id="productos">
+                <div class="container">
+                    <h2>Nuestros Productos</h2>
+                    <div class="producto" data-nombre="Crema para la Cara" data-precio="330">
+                        <img src="C:\Users\jano\OneDrive\Documentos\HTML Rocha Armando\imagenes\CremaParaLaCara.jpg" alt="Producto 1: Crema para la cara">
+                        <h3>Crema para la Cara</h3>
+                        <p>Precio: $330</p>
+                        <button onclick="agregarAlCarrito(this)">Agregar al Carrito</button>
+                    </div>
+                    <div class="producto" data-nombre="Crema para los brazos" data-precio="450">
+                        <img src="C:\Users\jano\OneDrive\Documentos\HTML Rocha Armando\imagenes\cremabrazos.jpg" alt="Producto 2: Crema para los brazos">
+                        <h3>Crema para los brazos</h3>
+                        <p>Precio: $450</p>
+                        <button onclick="agregarAlCarrito(this)">Agregar al Carrito</button>
+                    </div>
+                    <div class="producto" data-nombre="Crema para las piernas" data-precio="500">
+                        <img src="C:\Users\jano\OneDrive\Documentos\HTML Rocha Armando\imagenes\crema-pierna.jpg" alt="Producto 3: Crema para las piernas">
+                        <h3>Crema para las piernas</h3>
+                        <p>Precio: $500</p>
+                        <button onclick="agregarAlCarrito(this)">Agregar al Carrito</button>
+                    </div>
+                    <div class="producto" data-nombre="Jabón Corporal" data-precio="469.99">
+                        <img src="C:\Users\jano\OneDrive\Documentos\HTML Rocha Armando\imagenes\jabon-corporal.jpg" alt="Producto 4: Jabón corporal">
+                        <h3>Jabón Corporal</h3>
+                        <p>Precio: $469.99</p>
+                        <button onclick="agregarAlCarrito(this)">Agregar al Carrito</button>
+                    </div>
+                    <div id="message" class="message">¡Producto agregado al carrito!</div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <script src="carritocompras.js"></script>
+    <script>
+        // Función para alternar la visibilidad de la barra deslizante
+function toggleSlider() {
+    const slider = document.getElementById('slider');
+    slider.classList.toggle('activo');
+}
+
+// Función para alternar el tema oscuro
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+
+// Función para redirigir a la página de información del usuario
+function redirectToUserInfo() {
+    window.location.href = 'ruta-a-tu-pagina-de-informacion.html';
+}
+
+// Función para redirigir a la página de inicio de sesión
+function redirectToLogin() {
+    window.location.href = 'login.html';
+}
+
+// Función para cerrar sesión
+function logout() {
+    fetch('logout.php', {
+        method: 'POST',
+        credentials: 'include'  // Para enviar las cookies de sesión
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirige a la página principal después de cerrar sesión
+            window.location.href = 'index.html';
+        } else {
+            console.error('Error al cerrar sesión');
+        }
+    })
+    .catch(error => console.error('Error al cerrar sesión:', error));
+}
+
+// Verifica si el usuario está logueado al cargar la página
+window.onload = function() {
+    fetch('check_session.php', {
+        method: 'POST',
+        credentials: 'include'  // Para enviar las cookies de sesión
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.loggedin) {
+            // Si el usuario está logueado, muestra "Mi Cuenta" y "Cerrar sesión"
+            document.getElementById('loginButton').style.display = 'none';
+            document.getElementById('userInfoButton').style.display = 'inline-block';
+            document.getElementById('logoutButton').style.display = 'inline-block';
+        } else {
+            // Si no está logueado, muestra "Iniciar sesión"
+            document.getElementById('loginButton').style.display = 'inline-block';
+            document.getElementById('userInfoButton').style.display = 'none';
+            document.getElementById('logoutButton').style.display = 'none';
+        }
+    })
+    .catch(error => console.error('Error al verificar sesión:', error));
+}
+
+    </script>
+</body>
+</html>

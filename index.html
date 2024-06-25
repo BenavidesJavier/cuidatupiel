@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones para el Cuidado de la Piel</title>
+    <link rel="stylesheet" href="CuidadoDeLaPiel.css">
+</head>
+<body>
+    <header>
+        <h1>Consejos para el Cuidado de la Piel</h1>
+        <img src="C:\Users\jano\OneDrive\Documentos\HTML Rocha Armando\imagenes\banner.jpg" alt="Banner">
+    </header>
+    <section>
+        <h2>Introducción</h2>
+        <p>
+            Bienvenido a nuestra plataforma dedicada al cuidado de la piel, un espacio donde la salud y el bienestar se fusionan para revelar la belleza natural que reside en cada uno de nosotros. En un mundo lleno de estrés, contaminación y constantes cambios ambientales, el cuidado adecuado de nuestra piel se vuelve esencial para mantenerla radiante y saludable.
+        </p>
+    </section>
+
+    <section>
+        <h2>Importancia del Cuidado de la Piel</h2>
+        <p>
+            La piel es el órgano más grande de nuestro cuerpo y actúa como una barrera protectora contra los elementos externos. Su estado refleja no solo nuestra salud física, sino también nuestro bienestar emocional y mental. Mantener una rutina de cuidado de la piel adecuada no solo promueve una apariencia joven y luminosa, sino que también contribuye a prevenir problemas dermatológicos como el acné, la sequedad, la sensibilidad y el envejecimiento prematuro.
+        </p>
+    </section>
+
+    <section>
+        <h2>Objetivos de la Página</h2>
+        <p>
+            Nuestro principal objetivo es proporcionarte información confiable y consejos prácticos para que puedas cuidar tu piel de manera efectiva y consciente. Queremos educarte sobre los diferentes tipos de piel, los factores que pueden afectar su salud y las mejores prácticas para mantenerla en óptimas condiciones. Además, estamos comprometidos a recomendarte productos y tratamientos que sean seguros, efectivos y respetuosos con el medio ambiente.
+        </p>
+    </section>
+
+    <section>
+        <h2>Desarrollo</h2>
+        <p>
+            La historia del cuidado de la piel se remonta a civilizaciones antiguas que reconocían la importancia de proteger y embellecer la piel. Desde el uso de ingredientes naturales como aceites y plantas medicinales hasta los avances científicos en dermatología, hemos recorrido un largo camino en nuestra comprensión y enfoque del cuidado de la piel.
+        </p>
+        <p>
+            En la actualidad, contamos con una amplia gama de productos y tratamientos diseñados para abordar las diversas necesidades de la piel, desde limpiadores suaves hasta sueros antioxidantes y protectores solares de amplio espectro. Sin embargo, es importante recordar que no existe una solución única para todos, y encontrar la rutina de cuidado de la piel adecuada requiere tiempo, paciencia y experimentación.
+        </p>
+    </section>
+
+    <section>
+        <h2>Conclusión</h2>
+        <p>
+            En nuestra búsqueda de la belleza y la juventud eterna, a menudo olvidamos que la verdadera luminosidad proviene de cuidarnos a nosotros mismos, tanto por dentro como por fuera. Al invertir en el cuidado de nuestra piel, no solo estamos mejorando nuestra apariencia física, sino también nuestra salud y autoestima. Te invitamos a unirte a nosotros en este viaje hacia una piel radiante, saludable y feliz. ¡Comencemos juntos este emocionante viaje hacia el bienestar cutáneo!
+        </p>
+    </section>
+
+    <main>
+        <section>
+            <h2>Hidratación</h2>
+            <p>Mantén tu piel hidratada usando una crema hidratante adecuada para tu tipo de piel. La hidratación es esencial para mantener la elasticidad de la piel, prevenir la sequedad y reducir la aparición de arrugas y líneas finas.</p>
+        </section>
+        
+        <section>
+            <h2>Protección Solar</h2>
+            <p>Protege tu piel del daño causado por el sol usando protector solar todos los días, incluso en días nublados. Busca un protector solar con un SPF adecuado para tu tipo de piel y aplícalo generosamente en todas las áreas expuestas al sol, especialmente en la cara, el cuello y las manos.</p>
+        </section>
+        
+        <section>
+            <h2>Alimentación y Hábitos Saludables</h2>
+            <p>Una dieta equilibrada rica en frutas, verduras, proteínas magras y grasas saludables puede contribuir a una piel más radiante y saludable. Además, asegúrate de mantener hábitos saludables como beber suficiente agua, dormir lo suficiente y reducir el estrés.</p>
+        </section>
+        
+        <section>
+            <h2>Consulta a un Profesional</h2>
+            <p>Si tienes problemas de piel persistentes o preocupaciones específicas, no dudes en consultar a un dermatólogo. Un profesional de la piel puede proporcionarte consejos personalizados y recomendaciones de productos para abordar tus necesidades individuales.</p>
+        </section>
+        
+        <h3>¿Tienes aún más dudas? ¿Deseas conocer los productos que te ayudan a mantener tu piel cuidada?</h3>
+        <p>
+            <a href="MasInformación.html" target="_self">Presiona aquí para conocer más sobre el cuidado de la piel</a> <br>
+            <a href="ProductosParaLaPiel.html" target="_blank">Presiona aquí para conocer los productos que te ayudan a cuidar de tu piel</a>
+        </p>
+
+        <section class="comment-section">
+            <h2>Deja tu comentario</h2>
+            <form class="comment-form">
+                <textarea placeholder="Escribe tu comentario aquí..." required></textarea>
+                <br>
+                <input type="submit" value="Enviar comentario">
+            </form>
+            <ul class="comments"></ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>¡Cuida tu piel y mantente saludable!</p>
+        <p>&copy; 2024 Recomendaciones para el Cuidado de la Piel</p>
+    </footer>
+
+    <div class="back-to-top" title="Volver arriba">↑</div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <script>
+        
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        
+        const progressBarContainer = document.querySelector('.progress-bar-container');
+        const progressBar = document.querySelector('.progress-bar');
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.body.clientHeight;
+
+        window.addEventListener('scroll', () => {
+            const scrollHeight = window.scrollY;
+            const totalHeight = fullHeight - windowHeight;
+            const progress = (scrollHeight / totalHeight) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            if (scrollHeight > 100) {
+                progressBarContainer.style.display = 'block';
+            } else {
+                progressBarContainer.style.display = 'none';
+            }
+        });
+
+       
+        const commentForm = document.querySelector('.comment-form');
+        const commentsList = document.querySelector('.comments');
+
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const commentText = commentForm.querySelector('textarea').value;
+            if (commentText.trim() !== '') {
+                const comment = document.createElement('li');
+                comment.classList.add('comment');
+                comment.textContent = commentText;
+                commentsList.appendChild(comment);
+                commentForm.reset();
+            } else {
+                alert('Por favor, escribe un comentario antes de enviar.');
+            }
+        });
+    </script>
+</body>
+</html>

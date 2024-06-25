@@ -1,0 +1,199 @@
+/* Estilo general del cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Sección de productos */
+#productos {
+    padding: 50px 0;
+}
+
+/* Estilo de cada producto */
+.producto {
+    width: 45%;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 5%;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Ajuste del margen derecho para productos pares */
+.producto:nth-child(2n) {
+    margin-right: 0;
+}
+
+/* Estilo de la imagen dentro de cada producto */
+.producto img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilo de la lista de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilo de los elementos de la lista de navegación */
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Estilo de los enlaces de la navegación */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo de las secciones */
+section {
+    padding: 50px 0;
+}
+
+/* Estilo de los encabezados de nivel 2 */
+h2 {
+    text-align: center;
+}
+
+/* Estilo de los botones */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo del botón en estado hover */
+button:hover {
+    background-color: #555;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center; /* Alineación del texto al centro */
+    padding: 20px 0;
+}
+
+
+/* Estilo adicional para botones */
+button {
+    padding: 1.3em 3em; /* Relleno interno ajustado */
+    font-size: 12px; /* Tamaño de fuente del botón */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 2.5px; /* Espaciado entre letras */
+    font-weight: 500; /* Grosor del texto */
+    color: #000; /* Color del texto en negro */
+    background-color: #fff; /* Fondo blanco */
+    border: none; /* Sin borde */
+    border-radius: 45px; /* Bordes redondeados */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Sombra del botón */
+    transition: all 0.3s ease 0s; /* Transición suave para todos los cambios */
+    cursor: pointer; /* Cursor de mano */
+    outline: none; /* Sin contorno al hacer clic */
+}
+
+/* Estilo del botón en estado hover */
+button:hover {
+    background-color: #23c483; /* Cambia el fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); /* Sombra más intensa */
+    color: #fff; /* Cambia el color del texto al pasar el cursor */
+    transform: translateY(-7px); /* Efecto de desplazamiento hacia arriba */
+}
+
+/* Estilo del botón en estado activo */
+button:active {
+    transform: translateY(-1px); /* Efecto de desplazamiento menos intenso al hacer clic */
+}
+
+/* Mensaje emergente */
+.message {
+    position: fixed; /* Posición fija */
+    bottom: 10px; /* Posición desde la parte inferior */
+    right: 10px; /* Posición desde la derecha */
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto en blanco */
+    padding: 15px; /* Relleno de 15px */
+    border-radius: 5px; /* Bordes redondeados */
+    display: none; /* No mostrar por defecto */
+}
+
+/* Mostrar el mensaje emergente */
+.show {
+    display: block; /* Mostrar el mensaje emergente */
+}
+/* Estilos para el tema oscuro */
+body.dark-theme {
+    background-color: #333; /* Gris oscuro */
+    color: #ddd; /* Texto blanco o gris claro */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #555; /* Gris medio para los botones */
+    color: #fff; /* Texto blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+/* Estilos para el tema claro */
+body {
+    background-color: white;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+/* Estilos para el tema claro header */
+body:not(.dark-theme) header {
+    background-color: #555; /* Gris claro */
+    color: #fff; /* Texto del encabezado en blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el tema oscuro header */
+body.dark-theme header {
+    background-color: #555; /* Blanco */
+    color: #ffffff; /* Texto del encabezado en blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+/* Estilos para los botones en tema claro */
+body:not(.dark-theme) button {
+    background-color: #555; /* Gris medio para los botones */
+    color: #fff; /* Texto blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para los botones en tema oscuro */
+body.dark-theme button {
+    background-color: #ddd; /* Gris claro para los botones */
+    color: #000; /* Texto negro */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
